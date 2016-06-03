@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="calculator.css">
+</head>
+
+<body>
+    <div class='calculatorMain'>
+        <div >
+            <input id='typeRecord' type="text" readonly="readonly" value="0">
+        </div>
+        <div >
+            <input id = 'result' type="text" readonly="readonly" value="15">
+        </div>
+        <div class='buttonPad'>
+            <div class="left">
+                <div>
+                    <button class="num" type="button">7</button>
+                    <button class="num" type="button">8</button>
+                    <button class="num" type="button">9</button>
+                    <button type="button">+</button>
+
+                </div>
+                <div>
+                    <button class="num" type="button">4</button>
+                    <button class="num" type="button">5</button>
+                    <button class="num" type="button">6</button>
+                    <button type="button">-</button>
+                </div>
+                <div>
+                    <button class="num" type="button">1</button>
+                    <button class="num" type="button">2</button>
+                    <button class="num" type="button">3</button>
+                    <button type="button">*</button>
+                </div>
+                <div>
+                    <button class="num" type="button">0</button>
+                    <button id="dot" type="button">.</button>
+                    <button id="clear" type="button">C</button>
+                    <button  type="button">/</button>
+
+                </div>
+            </div>
+            <div class="right">
+                <div>
+                    <button type="button">%</button>
+                </div>
+                <div>
+                    <button id="backspace" type="button">←</button>
+                </div>
+                <div>
+                    <button class="equal" type="button">=</button>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+        <script src="./js/calculator.js"></script>
+
+</body>
+
+</html>
