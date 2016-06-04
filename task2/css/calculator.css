@@ -1,32 +1,68 @@
 .calculatorMain {
     position: relative;
     top: 30%;
-    border-style: groove;
-    margin-left: 45%;
-    border-color: #B5CFEC;
-    margin-right: 42%;
-    height: 280px;
-    border-width: 1.5px;
+    margin:auto;
+    width: 300px;
+    height: 330px;
+    border: #B5CFEC groove 1.5px;
     border-radius: 5px;
 }
 
-input {
-border-style: solid;
-    border-width: 1.5px;
-    border-color: #B5CFEC;
-    margin-bottom: 13px;
-    margin-top: 10px;
-    margin-left: 6px;
-    padding-right: 10px;
-    height: 35px;
-    width: 230px;
-    text-align: right;
+.showPad {
+    height: 30%;
 }
 
-button {
+#typeRecord {
+    border-bottom: transparent;
+    width: 90%;
+    height: 20%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    text-align: right;
+    padding-right: 10px;
+    border-color: #B5CFEC;
+    border-width: 1.5px;
+}
+
+#result {
+    width: 90%;
+    height: 50%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    border-top: transparent;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: right;
+    font-size: xx-large;
+    padding-right: 10px;
+    border-color: #B5CFEC;
+    border-width: 1.5px;
+
+}
+.buttonPad {
+    height: 70%;
+}
+
+.left {
+    width: 80%;
+    float: left;
+}
+
+.right {
+    float: left;
+    width:20%
+}
+
+.btn {
     text-align: center;
-    margin-left: 6px;
-    margin-bottom: 15px;
+    margin-left: 5%;
+    /*margin-right: 5%;*/
+    margin-bottom: 10px;
+    margin-top: 10px;
     border-radius: 3px;
     border-color: #B5CFEC;
     background-color: white;
@@ -35,36 +71,15 @@ button {
     border-width: 1.5px;
 }
 
-.left {
-        width: 80%;
-    float: left;
-}
-
-.right {
-    float: left;
+.leftbtn {
+    margin-left: 15px;
 }
 
 .equal {
-    height: 85px;
+    height: 90px;
+    margin-left: 7px;
 }
 
-#typeRecord {
-    height: 10px;
-    margin-bottom: 0;
-    border-bottom: transparent;
-    height: 15px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: xx-small;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-}
-
-#result {
-    border-top: transparent;
-    margin-top: 0;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    font-size: large;
-    font-family: 
+.buttonOn {
+    background-color: #B5CFEC;
 }
