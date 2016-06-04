@@ -1,6 +1,7 @@
 .calculatorMain {
-    position: relative;
+    position: absolute;
     top: 30%;
+    left: 40%;
     margin:auto;
     width: 300px;
     height: 330px;
@@ -14,7 +15,7 @@
 
 #typeRecord {
     border-bottom: transparent;
-    width: 90%;
+    width: 85%;
     height: 20%;
     margin-left: 5%;
     margin-right: 5%;
@@ -25,10 +26,12 @@
     padding-right: 10px;
     border-color: #B5CFEC;
     border-width: 1.5px;
+
+
 }
 
 #result {
-    width: 90%;
+    width: 85%;
     height: 50%;
     margin-left: 5%;
     margin-right: 5%;
@@ -41,8 +44,8 @@
     padding-right: 10px;
     border-color: #B5CFEC;
     border-width: 1.5px;
-
 }
+
 .buttonPad {
     height: 70%;
 }
