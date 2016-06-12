@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html class="bootstrap-admin-vertical-centered">
 <head>
@@ -20,15 +22,16 @@
         <div class="row">
             <div class="col-lg-12">
                     <%
-                        if(requst.getAttribute("errMessage") != null) { 
+                        String errMsg = (String) request.getAttribute("errMsg");
+                        if( errMsg != null) {
                     %>
                     <div class="alert alert-info">
-                        <a class="close" data-dismiss="alert" href="#">&times;</a> 请输入用户名和密码
+                        <a class="close" data-dismiss="alert">&times;</a> ${errMsg}
                     </div>
                     <%
                         }
                     %>
-                        <form method="post" action="/login" class="bootstrap-admin-login-form">
+                        <form method="post" action="login" class="bootstrap-admin-login-form">
                             <h1>登录</h1>
                             <div class="form-group">
                                 <input class="form-control" required type="text" name="username" placeholder="请输入任意用户名登录">
