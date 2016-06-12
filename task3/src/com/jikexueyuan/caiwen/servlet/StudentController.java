@@ -22,12 +22,8 @@ public class StudentController extends HttpServlet{
         if (req.getRequestURI().endsWith("list")) {
             List<Student> students = studentService.getAllStudents();
             req.setAttribute("students", students);
-            req.getRequestDispatcher("/jsp/student/list.jsp").forward(req,resp);
+            req.getRequestDispatcher("student/list.jsp").forward(req,resp);
         }
     }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-    }
 }
