@@ -36,4 +36,15 @@ public class StudentService {
         }
         return students;
     }
+
+    public void add10Students() {
+        String sql = " insert into t_students (stu_id, stu_name, stu_age, stu_gender, stu_adress) values " + " ";
+        connection = ConnectionFactory.getInstance().getConnection();
+        try {
+            result = connection.createStatement().executeQuery(" select * FROM t_students; ");
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+
+        }
+    }
 }
