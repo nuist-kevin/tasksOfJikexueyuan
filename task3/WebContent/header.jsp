@@ -8,12 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" media="screen" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" media="screen" href="/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" media="screen" href="<%=request.getContextPath()%>/css/bootstrap.min.css">
+    <link rel="stylesheet" media="screen" href="<%=request.getContextPath()%>/css/bootstrap-theme.min.css">
 
     <!-- Bootstrap Admin Theme -->
-    <link rel="stylesheet" media="screen" href="/css/bootstrap-admin-theme.css">
-    <link rel="stylesheet" media="screen" href="/css/bootstrap-admin-theme-change-size.css">
+    <link rel="stylesheet" media="screen" href="<%=request.getContextPath()%>/css/bootstrap-admin-theme.css">
+    <link rel="stylesheet" media="screen" href="<%=request.getContextPath()%>/css/bootstrap-admin-theme-change-size.css">
 
 </head>
 <body class="bootstrap-admin-with-small-navbar">
@@ -47,14 +47,14 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="main.jsp">主面板</a>
+                    <a class="navbar-brand" href="<%=request.getContextPath()%>/main.jsp">主面板</a>
                 </div>
                 <div class="collapse navbar-collapse main-navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-hover="dropdown">学生管理 <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="studentlist">学生列表</a></li>
+                                <li><a href="<%=request.getContextPath()%>/studentlist">学生列表</a></li>
                             </ul>
                         </li>
                     </ul>

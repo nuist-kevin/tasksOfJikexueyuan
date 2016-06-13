@@ -6,9 +6,9 @@
     <title>登录</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" media="screen" href="css/bootstrap.min.css">
-    <link rel="stylesheet" media="screen" href="css/bootstrap-theme.min.css">
-    <link rel="stylesheet" media="screen" href="css/bootstrap-admin-theme.css">
+    <link rel="stylesheet" media="screen" href="<%=request.getContextPath()%>/css/bootstrap.min.css">
+    <link rel="stylesheet" media="screen" href="<%=request.getContextPath()%>/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" media="screen" href="<%=request.getContextPath()%>/css/bootstrap-admin-theme.css">
 
     <style type="text/css">
         .alert {
@@ -31,7 +31,7 @@
                     <%
                         }
                     %>
-                        <form method="post" action="login" class="bootstrap-admin-login-form">
+                        <form method="post" action="<%=request.getContextPath()%>/login" class="bootstrap-admin-login-form">
                             <h1>登录</h1>
                             <div class="form-group">
                                 <input class="form-control" required type="text" name="username" placeholder="请输入任意用户名进行登录">
@@ -45,8 +45,8 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
     <script type="text/javascript">
         $(function() {
             $('input[name="username"]').focus();

@@ -92,14 +92,14 @@
     </div>
 </div>
 
-<script type="text/javascript" src="/js/jquery-3.0.0.min.js"></script>
-<script type="text/javascript" src="/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/js/twitter-bootstrap-hover-dropdown.min.js"></script>
-<script type="text/javascript" src="/js/bootstrap-admin-theme-change-size.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/twitter-bootstrap-hover-dropdown.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/bootstrap-admin-theme-change-size.js"></script>
 <script>
     $(function() {
         $("#delMalesBtn").click(function() {
-            $.ajax({type:'GET', url: '/studentlist?action=delete&gender=M', success: function() {
+            $.ajax({type:'GET', url: '<%=request.getContextPath()%>/studentlist?action=delete&gender=M', success: function() {
                 window.location.reload();
             }});
         });
@@ -107,7 +107,7 @@
             $.ajax(
                     {
                         type: 'GET',
-                        url: '/studentlist?action=add',
+                        url: '<%=request.getContextPath()%>/studentlist?action=add',
                         success: function () {
                             window.location.reload();
                         }
