@@ -55,8 +55,6 @@
                             <a class="dropdown-toggle" data-hover="dropdown">学生管理 <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="studentlist">学生列表</a></li>
-                                <li><a href="#">大于15岁的男生</a></li>
-                                <li><a href="#"></a></li>
                             </ul>
                         </li>
                     </ul>

@@ -19,10 +19,16 @@ public class StudentController extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if (req.getRequestURI().endsWith("list")) {
+        String action = req.getParameter("action");
+        if (action == null) {
             List<Student> students = studentService.getAllStudents();
             req.setAttribute("students", students);
-            req.getRequestDispatcher("student/list.jsp").forward(req,resp);
+            req.getRequestDispatcher("student/list.jsp").forward(req, resp);
+        } else if ("delete".equals(action)) {
+            String gender = req.getParameter("gender");
+            studentService.deleteAllMales(gender);
+        } else if ("add".equals(action)) {
+            studentService.add10Students();
         }
     }
 
