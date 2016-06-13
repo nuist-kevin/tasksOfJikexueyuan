@@ -45,9 +45,9 @@
     </div>
 </div>
 
-<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/twitter-bootstrap-hover-dropdown.min.js"></script>
-<script type="text/javascript" src="js/bootstrap-admin-theme-change-size.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/twitter-bootstrap-hover-dropdown.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/bootstrap-admin-theme-change-size.js"></script>
 </body>
 </html>
