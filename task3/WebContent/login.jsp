@@ -34,7 +34,7 @@
                         <form method="post" action="login" class="bootstrap-admin-login-form">
                             <h1>登录</h1>
                             <div class="form-group">
-                                <input class="form-control" required type="text" name="username" placeholder="请输入任意用户名登录">
+                                <input class="form-control" required type="text" name="username" placeholder="请输入任意用户名进行登录">
                             </div>
                             <div class="form-group">
                                 <input class="form-control" required type="password" name="password" placeholder="请输入任意密码">
