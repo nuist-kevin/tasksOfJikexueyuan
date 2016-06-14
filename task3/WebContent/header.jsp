@@ -54,7 +54,9 @@
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-hover="dropdown">学生管理 <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="<%=request.getContextPath()%>/studentlist">学生列表</a></li>
+                                <li><a href="<%=request.getContextPath()%>/studentlist">所有学生</a></li>
+                                <li><a href="<%=request.getContextPath()%>/studentlist?action=get&startAge=15">大于15岁的男生</a></li>
+
                             </ul>
                         </li>
                     </ul>

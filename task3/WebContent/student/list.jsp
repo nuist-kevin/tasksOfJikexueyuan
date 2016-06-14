@@ -24,9 +24,16 @@
                         <div class="panel-heading">
                             <div class="text-muted bootstrap-admin-box-title">select * from t_students;</div>
                         </div>
+
                         <div class="bootstrap-admin-panel-content text-muted"
                              style="padding: 60px 0; text-align: center">
-                            尚无数据, <button id="addBtn" class="btn btn-xs btn-primary">添加10条</button>
+                            尚无数据,                        <%
+                            if (request.getParameter("action") == null) {
+                        %>
+                            <button id="addBtn" class="btn btn-xs btn-primary">添加10条</button>
+                            <%
+                                }
+                            %>
 
                         </div>
                     </div>
@@ -39,8 +46,14 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <div class="text-muted bootstrap-admin-box-title">select * from t_students;
+                            <div class="text-muted bootstrap-admin-box-title">详细数据
+                                <%
+                                    if (request.getParameter("action") == null) {
+                                %>
                                 <button id="delMalesBtn" class="btn btn-xs btn-primary right">删除所有男生</button>
+                                <%
+                                    }
+                                %>
                             </div>
                         </div>
                         <div class="bootstrap-admin-panel-content">

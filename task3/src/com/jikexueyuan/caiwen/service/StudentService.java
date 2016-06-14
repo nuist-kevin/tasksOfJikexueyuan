@@ -13,13 +13,12 @@ import java.util.List;
 public class StudentService {
 
     private Connection connection;
-    private ResultSet result;
 
     public List<Student> getAllStudents() {
         List<Student> students = new ArrayList<>();
         connection = ConnectionFactory.getInstance().getConnection();
         try {
-            result = connection.createStatement().executeQuery(" select * FROM t_students; ");
+            ResultSet result = connection.createStatement().executeQuery(" select * FROM t_students; ");
             while (result.next()) {
                 Student student = new Student();
                 student.setId(result.getInt("stu_id"));
@@ -31,6 +30,12 @@ public class StudentService {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
         return students;
     }
@@ -41,35 +46,35 @@ public class StudentService {
             Statement statement = connection.createStatement();
             connection.setAutoCommit(false);
             statement.executeUpdate(" insert into t_students " +
-                    " (stu_id, stu_name, stu_age, stu_gender,stu_address) values " +
-                    " (1, '马云', 16, 'M', '浙江'); ");
+                                            " (stu_id, stu_name, stu_age, stu_gender,stu_address) values " +
+                                            " (1, '马云', 16, 'M', '浙江'); ");
             statement.executeUpdate(" insert into t_students " +
-                    " (stu_id, stu_name, stu_age, stu_gender,stu_address) values " +
-                    " (2, '马化腾', 15, 'M', '广东'); ");
+                                            " (stu_id, stu_name, stu_age, stu_gender,stu_address) values " +
+                                            " (2, '马化腾', 15, 'M', '广东'); ");
             statement.executeUpdate(" insert into t_students " +
-                    " (stu_id, stu_name, stu_age, stu_gender,stu_address) values " +
-                    " (3, '李彦宏', 14, 'M', '山西'); ");
+                                            " (stu_id, stu_name, stu_age, stu_gender,stu_address) values " +
+                                            " (3, '李彦宏', 14, 'M', '山西'); ");
             statement.executeUpdate(" insert into t_students " +
-                    " (stu_id, stu_name, stu_age, stu_gender,stu_address) values " +
-                    " (4, '刘强东', 18, 'M', '江苏'); ");
+                                            " (stu_id, stu_name, stu_age, stu_gender,stu_address) values " +
+                                            " (4, '刘强东', 18, 'M', '江苏'); ");
             statement.executeUpdate(" insert into t_students " +
-                    " (stu_id, stu_name, stu_age, stu_gender,stu_address) values " +
-                    " (5, '孙亚芳', 14, 'F', '武汉'); ");
+                                            " (stu_id, stu_name, stu_age, stu_gender,stu_address) values " +
+                                            " (5, '孙亚芳', 14, 'F', '武汉'); ");
             statement.executeUpdate(" insert into t_students " +
-                    " (stu_id, stu_name, stu_age, stu_gender,stu_address) values " +
-                    " (6, '罗永浩', 19, 'M', '吉林'); ");
+                                            " (stu_id, stu_name, stu_age, stu_gender,stu_address) values " +
+                                            " (6, '罗永浩', 19, 'M', '吉林'); ");
             statement.executeUpdate(" insert into t_students " +
-                    " (stu_id, stu_name, stu_age, stu_gender,stu_address) values " +
-                    " (7, '贾跃亭', 14, 'M', '山西'); ");
+                                            " (stu_id, stu_name, stu_age, stu_gender,stu_address) values " +
+                                            " (7, '贾跃亭', 14, 'M', '山西'); ");
             statement.executeUpdate(" insert into t_students " +
-                    " (stu_id, stu_name, stu_age, stu_gender,stu_address) values " +
-                    " (8, '任正非', 20, 'M', '贵州'); ");
+                                            " (stu_id, stu_name, stu_age, stu_gender,stu_address) values " +
+                                            " (8, '任正非', 20, 'M', '贵州'); ");
             statement.executeUpdate(" insert into t_students " +
-                    " (stu_id, stu_name, stu_age, stu_gender,stu_address) values " +
-                    " (9, '雷军', 15, 'M', '湖北'); ");
+                                            " (stu_id, stu_name, stu_age, stu_gender,stu_address) values " +
+                                            " (9, '雷军', 15, 'M', '湖北'); ");
             statement.executeUpdate(" insert into t_students " +
-                    " (stu_id, stu_name, stu_age, stu_gender,stu_address) values " +
-                    "(10, '董明珠', 16, 'F', '江苏'); ");
+                                            " (stu_id, stu_name, stu_age, stu_gender,stu_address) values " +
+                                            "(10, '董明珠', 16, 'F', '江苏'); ");
             connection.commit();
         } catch (Exception e1) {
             try {
@@ -78,6 +83,12 @@ public class StudentService {
                 e.printStackTrace();
             }
             e1.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -85,11 +96,48 @@ public class StudentService {
 
         connection = ConnectionFactory.getInstance().getConnection();
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(" delete FROM t_students WHERE stu_gender = ? ");
+            PreparedStatement preparedStatement = connection
+                    .prepareStatement(" delete FROM t_students WHERE stu_gender = ? ");
             preparedStatement.setString(1, gender);
             preparedStatement.executeUpdate();
         } catch (SQLException e1) {
             e1.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
+    }
+
+    public List<Student> getStudents(String startAge) {
+        List<Student> students = new ArrayList<>();
+        connection = ConnectionFactory.getInstance().getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(
+                    " select * FROM t_students WHERE stu_age > ? and stu_gender = 'M' ");
+            preparedStatement.setString(1, startAge);
+            ResultSet result = preparedStatement.executeQuery();
+            while (result.next()) {
+                Student student = new Student();
+                student.setId(result.getInt("stu_id"));
+                student.setName(result.getString("stu_name"));
+                student.setAge(result.getInt("stu_age"));
+                student.setGender(result.getString("stu_gender"));
+                student.setAddress(result.getString("stu_address"));
+                students.add(student);
+            }
+
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return students;
     }
 }
