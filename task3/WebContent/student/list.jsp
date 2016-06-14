@@ -22,7 +22,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <div class="text-muted bootstrap-admin-box-title">select * from t_students;</div>
+                            <div class="text-muted bootstrap-admin-box-title">详细数据</div>
                         </div>
 
                         <div class="bootstrap-admin-panel-content text-muted"
