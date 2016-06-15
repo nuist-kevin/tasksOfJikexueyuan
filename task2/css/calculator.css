@@ -3,14 +3,14 @@
     top: 30%;
     left: 40%;
     margin:auto;
-    width: 300px;
-    height: 330px;
+    width: 280px;
+    height: 350px;
     border: #B5CFEC groove 1.5px;
     border-radius: 5px;
 }
 
 .showPad {
-    height: 30%;
+    height: 20%;
 }
 
 #typeRecord {
@@ -40,7 +40,7 @@
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     text-align: right;
-    font-size: xx-large;
+    font-size: large;
     padding-right: 10px;
     border-color: #B5CFEC;
     border-width: 1.5px;
@@ -62,7 +62,7 @@
 
 .btn {
     text-align: center;
-    margin-left: 5%;
+    margin-left: 14px;
     /*margin-right: 5%;*/
     margin-bottom: 10px;
     margin-top: 10px;
@@ -72,10 +72,6 @@
     width: 35px;
     height: 35px;
     border-width: 1.5px;
-}
-
-.leftbtn {
-    margin-left: 15px;
 }
 
 .equal {
